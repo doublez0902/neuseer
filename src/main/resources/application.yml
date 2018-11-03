@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    cache:false
+  datasource:
+    url:jdbc:mysql://120.24.157.214:3306/breakersql
+    username:root
+    password:123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.xidian.neuseer.domain
+server:
+  port: 8008

@@ -1,0 +1,23 @@
+header .row {
+    padding-left: -15px;
+    padding-right: -15px;
+}
+
+.title {
+    background: linear-gradient(#0066FF, #0099FF);
+    color: white;
+    height: 52px;
+    letter-spacing: 13px;
+    font-size: x-large;
+    text-align: left;
+    line-height: 54px;
+}
+
+.app_name {
+    margin-left: 20px;
+}
+
+.setting {
+    margin-top: 100px;
+
+}
