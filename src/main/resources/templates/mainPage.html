@@ -9,12 +9,14 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="../static/traceback/css/trackPage.css" rel="stylesheet">
+    <link href="/traceback/css/mainPage.css" rel="stylesheet">
 
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+    <script src="/traceback/js/mainPage.js"></script>
 </head>
 <body class="container-fluid">
 <header class="row">
@@ -23,30 +25,46 @@
     </div>
 </header>
 <div class="row">
-    <div class="col-md-1 col-lg-1">空白区域</div>
-    <div class="col-md-2 col-lg-2 setting">
+    <div class="col-md-2 col-lg-2 col-md-offset-1 col-lg-offset-1 setting">
         <form>
-            故障类型：
-            <select name="">
-                <option value="volvo">Volvo</option>
-            </select>
-            <br/>
-            分析类型：
-            <select name="">
-                <option value="定性">定性分析</option>
-                <option value="定性">定性分析</option>
-            </select>
+            <div class="form-group">
+                <label for="failureType">故障类型:</label>
+                <select name="failureType" class="form-control" id="failureType">
+                    <option value="leak">SF6泄露</option>
+                    <option value="deterioration">主要部件劣化</option>
+                    <option value="abnormal">操作机构异常</option>
+                    <option value="damage">辅助部件损坏</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="analysisType">分析类型：</label>
+                <select name="analysisType" class="form-control" id="analysisType" onblur="setParamAvail()">
+                    <option value="qualitative">定性分析</option>
+                    <option value="quantitative">定量分析</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dataSource">数据源：</label>
+                <select name="dataSource" class="form-control" id="dataSource" onfocus="getDataSource()">
+                </select>
+            </div>
             <hr>
-            数据源：
-            <select name="">
-                <option value=""></option>
-            </select>
-            <br/>
-            <input type="submit" value="Submit">
+            <div class="form-group">
+                <label for="support">支持度：</label>
+                <input type="number" class="form-control" id="support" placeholder="0.2" min="0.0" max="1.0" step="0.1">
+            </div>
+            <div class="form-group">
+                <label for="confidence">置信度：</label>
+                <input type="number" class="form-control" id="confidence" placeholder="0.5" min="0.0" max="1.0"
+                       step="0.1">
+            </div>
+            <hr>
+            <input class="btn btn-default btn-primary" id="submit" type="submit" value="Submit">
         </form>
     </div>
-    <div class="col-md-8 col-lg-8 viewArea">主视图</div>
-    <div class="col-md-1 col-lg-1">空白区域</div>
+    <div class="col-md-8 col-lg-8 viewArea">
+        <div id="contentViewer"></div>
+    </div>
 </div>
 </body>
 </html>
