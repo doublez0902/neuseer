@@ -1,17 +1,25 @@
 package com.xidian.neuseer.controller;
 
 
+import com.xidian.neuseer.service.DataService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
 @Controller
 public class TraceBack {
+
+    @Resource
+    DataService dataService;
 
     @RequestMapping("/TraceBack")
     public String breaker() {
@@ -25,25 +33,29 @@ public class TraceBack {
         if (analysisType.equals("quantitative")) {
             switch (failureType) {
                 case "leak":
-                    mapPack.put("leak", "SF6泄露");
+                    mapPack.put("algorithmset", "SF6泄露");
                     break;
                 case "deterioration":
-                    mapPack.put("deterioration", "主要部件劣化");
+                    mapPack.put("businessTree", "主要部件劣化");
                     break;
                 case "abnormal":
-                    mapPack.put("abnormal", "操作机构异常");
+                    mapPack.put("dataTree", "操作机构异常");
                     break;
                 default:
-                    mapPack.put("damage", "辅助部件损坏");
+                    mapPack.put("qualityTree", "辅助部件损坏");
             }
         } else {
-            mapPack.put("inputdata", "inputdata");
+            mapPack.put("SF6packlogitAIC", "inputdata");
         }
         return mapPack;
     }
 
-    @ResponseBody
+
     @RequestMapping("/getTableContent")
-    public void getBusinesNodes() {
+    public ModelAndView getBusinesNodes(@RequestParam("dataSource") String name) {
+        List<Map<String, String>> tableData = dataService.getTableData(name);
+        ModelAndView modelAndView = new ModelAndView("tableContent");
+        modelAndView.addObject("tableData", tableData);
+        return modelAndView;
     }
 }

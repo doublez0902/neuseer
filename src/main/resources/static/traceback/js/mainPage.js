@@ -1,3 +1,4 @@
+// 获取数据列表
 function getDataSource() {
     $.ajax({
         type: "POST",
@@ -17,6 +18,7 @@ function getDataSource() {
     })
 }
 
+//设置参数可用性
 function setParamAvail() {
     if ($("#analysisType").val() == 'qualitative') {
         setAvailable();
@@ -37,6 +39,24 @@ function setAvailable() {
     $("#confidence").removeAttr("disabled");
 }
 
+//读取表格内容
+function showTableDate() {
+    $.ajax({
+        async: false,
+        cache: false,
+        type: "POST",
+        url: "/getTableContent",
+        data: {
+            dataSource: $("#dataSource").val(),
+        },
+        dataType: "html",
+        success: function (response) {
+            $('#contentViewer').html(response);
+        }
+    });
+}
+
+//提交表单
 $('#submit').click(function () {
     $.ajax({
         async: false,
