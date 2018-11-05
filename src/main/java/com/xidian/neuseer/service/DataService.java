@@ -1,10 +1,11 @@
 package com.xidian.neuseer.service;
 
+import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
+
 
 public interface DataService {
 
-    List<Map<String, String>> getTableData(String name);
+    List<LinkedHashMap<String, String>> getTableData(String name);
 
 }

@@ -6,9 +6,16 @@
 </head>
 <body>
 <table class="table table-bordered table-bordered">
-    <!--<tr  th:each="lineData : ${tableData}" >-->
-    <!--<td th:text="${map[key]}"></td>-->
-    <!--</tr>-->
+    <tr>
+        <th th:each="titleName : ${title}">
+            <span th:text="${titleName}"></span>
+        </th>
+    </tr>
+    <tr th:each="lineData : ${tableData}">
+        <div th:each="dataValue : ${lineData.values()}">
+            <td th:text="${dataValue}"></td>
+        </div>
+    </tr>
 </table>
 </body>
 </html>
