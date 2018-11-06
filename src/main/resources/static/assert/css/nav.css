@@ -1,0 +1,24 @@
+header .row {
+    padding-left: -15px;
+    padding-right: -15px;
+    background: linear-gradient(#0048DA, #0063FF);
+    height: 52px;
+}
+
+a, a:hover {
+    color: white;
+    text-decoration: none
+}
+
+.title {
+    padding-left: 30px;
+    letter-spacing: 12px;
+    font-size: x-large;
+    text-align: left;
+    line-height: 52px;
+}
+
+.nav {
+    font-size: large;
+    line-height: 52px;
+}

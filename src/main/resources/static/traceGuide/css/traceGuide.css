@@ -1,0 +1,39 @@
+.traceTitle {
+    margin-top: 60px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.traceContent {
+    margin-top: 60px;
+}
+
+.traceContent p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.grade1 {
+    margin-top: 110px;
+    margin-bottom: 110px;
+}
+
+.grade2 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.grade3 {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.grade4 {
+    margin-top: 110px;
+    margin-bottom: 110px;
+}
+
+.grade5 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

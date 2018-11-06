@@ -29,14 +29,14 @@ function setParamAvail() {
 
 //设置input不可用
 function setDisAvailable() {
-    $('#support').attr("disabled", true);
-    $("#confidence").attr("disabled", true);
+    $('#supportForm').css("display", "none");
+    $("#confirmationForm").css("display", "none");
 }
 
 //设置input可用
 function setAvailable() {
-    $("#support").attr("disabled", false);
-    $("#confidence").removeAttr("disabled");
+    $('#supportForm').css("display", "block");
+    $("#confirmationForm").css("display", "block");
 }
 
 //读取表格内容

@@ -2,7 +2,7 @@ spring:
   thymeleaf:
     cache:false
   datasource:
-    url: jdbc:mysql:///breakersql
+    url: jdbc:mysql://:3306/breakersql
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
