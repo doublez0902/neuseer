@@ -3,7 +3,6 @@ package com.xidian.neuseer.controller;
 
 import com.xidian.neuseer.service.DataService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,8 +18,8 @@ public class TraceBack {
     @Resource
     DataService dataService;
 
-    @RequestMapping("/TraceBack")
-    public String breaker() {
+    @RequestMapping("/traceBack")
+    public String traceBack() {
         return "mainPage";
     }
 
@@ -63,4 +62,5 @@ public class TraceBack {
 
         return modelAndView;
     }
+
 }
