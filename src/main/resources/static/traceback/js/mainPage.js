@@ -31,12 +31,16 @@ function setParamAvail() {
 function setDisAvailable() {
     $('#supportForm').css("display", "none");
     $("#confirmationForm").css("display", "none");
+    $("#minForm").css("display", "none");
+    $("#maxForm").css("display", "none");
 }
 
 //设置input可用
 function setAvailable() {
     $('#supportForm').css("display", "block");
     $("#confirmationForm").css("display", "block");
+    $('#minForm').css("display", "block");
+    $('#maxForm').css("display", "block");
 }
 
 //读取表格内容
@@ -62,13 +66,15 @@ $('#submit').click(function () {
         async: false,
         cache: false,
         type: "POST",
-        url: "/getTableContent",
+        url: "/submintRun",
         data: {
             failureType: $("#failureType").val(),
             analysisType: $("#analysisType").val(),
             dataSource: $("#dataSource").val(),
             support: $("#support").val(),
-            confidence: $("#confidence").val()
+            confidence: $("#confidence").val(),
+            minLength: $("#minLength").val(),
+            maxLength: $("#minLength").val()
         },
         dataType: "html",
         success: function (response) {

@@ -68,6 +68,14 @@
                 <input type="number" class="form-control" id="confidence" placeholder="0.5" min="0.0" max="1.0"
                        step="0.1">
             </div>
+            <div class="form-group" id="minForm">
+                <label for="minLength">置信度：</label>
+                <input type="number" class="form-control" id="minLength" placeholder="2" min="2" step="1">
+            </div>
+            <div class="form-group" id="maxForm">
+                <label for="maxLength">置信度：</label>
+                <input type="number" class="form-control" id="maxLength" placeholder="4" min="2" step="0.1">
+            </div>
             <hr>
             <input class="btn btn-default btn-primary" id="submit" type="submit" value="Submit">
         </form>
