@@ -25,24 +25,24 @@ public class TraceBack {
 
     @ResponseBody
     @RequestMapping("/getDataTable")
-    public Map<String, String> getDataTable(@RequestParam("failureType") String failureType, @RequestParam("analysisType") String analysisType) {
+    public Map<String, String> getDataTable(@RequestParam("failureType") String failureType, @RequestParam(value = "analysisType") String analysisType) {
         Map mapPack = new HashMap<String, String>();
         if (analysisType.equals("quantitative")) {
             switch (failureType) {
                 case "leak":
-                    mapPack.put("algorithmset", "SF6泄露");
+                    mapPack.put("leak", "SF6泄露");
                     break;
                 case "deterioration":
-                    mapPack.put("businessTree", "主要部件劣化");
+                    mapPack.put("deterioration", "主要部件劣化");
                     break;
                 case "abnormal":
-                    mapPack.put("dataTree", "操作机构异常");
+                    mapPack.put("abnormal", "操作机构异常");
                     break;
                 default:
-                    mapPack.put("qualityTree", "辅助部件损坏");
+                    mapPack.put("damage", "辅助部件损坏");
             }
         } else {
-            mapPack.put("SF6packlogitAIC", "inputdata");
+            mapPack.put("qualitativeData", "定性");
         }
         return mapPack;
     }
