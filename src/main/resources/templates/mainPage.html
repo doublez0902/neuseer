@@ -23,9 +23,13 @@
 <header>
     <div class="row">
         <div class="col-md-3 col-lg-3 title">
-            <a href="/traceBack">开关设备影响因素分析</a>
+            <img src="/assert/picture/SchoolBadge.png" alt="西安电子科技大学" class="schoolBadge"/>
+            <a href="/home">开关设备影响因素分析</a>
         </div>
-        <div class="col-md-1 col-lg-1 col-md-offset-7 col-lg-offset-7 nav">
+        <div class="col-md-1 col-lg-1 col-md-offset-6 col-lg-offset-6 nav">
+            <a href="/traceBack">分析计算</a>
+        </div>
+        <div class="col-md-1 col-lg-1 nav">
             <a href="/traceGuide">追溯指南</a>
         </div>
         <div class="col-md-1 col-lg-1 nav">
@@ -33,7 +37,7 @@
         </div>
     </div>
 </header>
-<div class="row">
+<div class="row functionContainer">
     <div class="col-md-2 col-lg-2 col-md-offset-1 col-lg-offset-1 setting">
         <form>
             <div class="form-group">
@@ -76,13 +80,22 @@
                 <label for="maxLength">置信度：</label>
                 <input type="number" class="form-control" id="maxLength" placeholder="4" min="2" step="0.1">
             </div>
-            <hr>
+            <hr id="splitLine">
             <input class="btn btn-default btn-primary" id="submit" type="submit" value="Submit">
         </form>
     </div>
     <div class="col-md-8 col-lg-8 viewArea">
-        <div id="contentViewer"></div>
+        <div id="contentViewer">
+            <img src="/traceBack/picture/dataAnalysisBack.png" alt="西安电子科技大学" class="dataAnalysisBack"/>
+        </div>
     </div>
 </div>
+<footer>
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 foot">
+            <p>©2018 西安电子科技大学智能制造与工业大数据研究中心</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

@@ -16,4 +16,9 @@ public class TraceGuide {
     public String faultKnowledge() {
         return "faultKnowledge";
     }
+
+    @RequestMapping("/home")
+    public String home() {
+        return "home";
+    }
 }

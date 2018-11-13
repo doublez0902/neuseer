@@ -33,6 +33,7 @@ function setDisAvailable() {
     $("#confirmationForm").css("display", "none");
     $("#minForm").css("display", "none");
     $("#maxForm").css("display", "none");
+    $("#splitLine").css("display", "none");
 }
 
 //设置input可用
@@ -41,6 +42,7 @@ function setAvailable() {
     $("#confirmationForm").css("display", "block");
     $('#minForm').css("display", "block");
     $('#maxForm').css("display", "block");
+    $("#splitLine").css("display", "block");
 }
 
 //读取表格内容

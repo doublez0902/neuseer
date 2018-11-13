@@ -3,5 +3,7 @@
 }
 
 .viewArea {
+    height: 820px;
     margin-top: 50px;
+    overflow: auto;
 }

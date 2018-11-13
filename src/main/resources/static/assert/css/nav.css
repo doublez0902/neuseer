@@ -22,3 +22,27 @@ a, a:hover {
     font-size: large;
     line-height: 52px;
 }
+
+.functionContainer {
+    min-height: 925px;
+}
+
+.schoolBadge {
+    width: 50px;
+}
+
+footer .row {
+    background-color: #373D41;
+    height: 30px;
+}
+
+.foot {
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+}
+
+.foot p {
+    margin-bottom: 0;
+}
