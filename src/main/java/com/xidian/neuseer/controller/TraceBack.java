@@ -31,7 +31,7 @@ public class TraceBack {
     DataService dataService;
 
     @GetMapping("/")
-    public String users(Model model) {
+    public String defaultHome() {
         return "home";
     }
 
