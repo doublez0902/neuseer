@@ -18,7 +18,7 @@ public class TraceBack {
     @Resource
     DataService dataService;
 
-    @RequestMapping("/")
+    @RequestMapping("")
     public String traceBack() {
         return "mainPage";
     }
