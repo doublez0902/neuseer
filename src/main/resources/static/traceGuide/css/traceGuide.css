@@ -76,3 +76,7 @@
     font-size: 15px;
     line-height: 30px;
 }
+
+.describeWord {
+    min-height: 142px;
+}

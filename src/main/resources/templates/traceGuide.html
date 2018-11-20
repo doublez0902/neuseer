@@ -20,11 +20,11 @@
 <body class="container-fluid">
 <header>
     <div class="row">
-        <div class="col-md-4 col-lg-4 title">
+        <div class="col-md-6 col-lg-6 title">
             <img src="/assert/picture/SchoolBadge.png" alt="西安电子科技大学" class="schoolBadge"/>
             <a href="/home">高压开关设备影响因素分析</a>
         </div>
-        <div class="col-md-1 col-lg-1 col-md-offset-5 col-lg-offset-5 nav">
+        <div class="col-md-1 col-lg-1 col-md-offset-3 col-lg-offset-3 nav">
             <a href="/traceBack">分析计算</a>
         </div>
         <div class="col-md-1 col-lg-1 nav">
@@ -35,157 +35,153 @@
         </div>
     </div>
 </header>
-<div class="functionContainer">
-    <div class="row">
-        <div class="col-md-3 col-lg-3 col-md-offset-1 col-lg-offset-1 traceTitle">
-            <div class="questionCategory">质量问题分类</div>
-        </div>
-        <div class="col-md-1 col-lg-1 traceTitle">
-            <img src="/traceGuide/picture/rightArrow.svg" class="rightArrow"/>
-            <!--<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>-->
-        </div>
-        <div class="col-md-3 col-lg-3 traceTitle">
-            <div class="factorClassification">影响因素分类</div>
-        </div>
-        <div class="col-md-1 col-lg-1 traceTitle">
-            <img src="/traceGuide/picture/rightArrow.svg" class="rightArrow"/>
-            <!--<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>-->
-        </div>
-        <div class="col-md-2 col-lg-2 traceTitle">
-            <div class="traceability">质量问题追溯</div>
-        </div>
+<div class="row">
+    <div class="col-md-3 col-lg-3 col-md-offset-1 col-lg-offset-1 traceTitle">
+        <div class="questionCategory">质量问题分类</div>
     </div>
-    <div class="row traceContent">
-        <div class="col-md-2 col-lg-2 col-md-offset-1 col-lg-offset-1">
-            <p>
-                <button type="button" id="1_grade_1" class="btn btn-primary btn-block grade1">磨合</button>
-            </p>
-            <p>
-                <button type="button" id="1_grade_2" class="btn btn-primary btn-block grade1">机械特性测试</button>
-            </p>
-            <p>
-                <button type="button" id="1_grade_3" class="btn btn-primary btn-block grade1">工频耐压回路电阻测试</button>
-            </p>
-        </div>
-        <div class="col-md-2 col-lg-2">
-            <p>
-                <button type="button" id="2_grade_1" class="btn btn-primary btn-block grade2">拒分</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_2" class="btn btn-primary btn-block grade2">拒和</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_3" class="btn btn-primary btn-block grade2">拒动</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_4" class="btn btn-primary btn-block grade2">开距</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_5" class="btn btn-primary btn-block grade2">超程</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_6" class="btn btn-primary btn-block grade2">同期性</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_7" class="btn btn-primary btn-block grade2">弹跳</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_8" class="btn btn-primary btn-block grade2">速度</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_9" class="btn btn-primary btn-block grade2">相间电压</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_10" class="btn btn-primary btn-block grade2">端口间电压</button>
-            </p>
-            <p>
-                <button type="button" id="2_grade_11" class="btn btn-primary btn-block grade2">击穿</button>
-            </p>
-        </div>
-        <div class="col-md-2 col-lg-2">
-            <p>
-                <button type="button" id="3_grade_1" class="btn btn-success btn-block grade3">油杯高度</button>
-            </p>
-            <p>
-                <button type="button" id="3_grade_2" class="btn btn-success btn-block grade3">二次配线</button>
-            </p>
-            <p>
-                <button type="button" id="3_grade_3" class="btn btn-success btn-block grade3">脱扣器</button>
-            </p>
-            <p>
-                <button type="button" id="3_grade_4" class="btn btn-success btn-block grade3">电磁铁</button>
-            </p>
-            <p>
-                <button type="button" id="3_grade_5" class="btn btn-success btn-block grade3">限位螺钉</button>
-            </p>
-            <p>
-                <button type="button" id="3_grade_6" class="btn btn-success btn-block grade3">极柱拉杆螺钉</button>
-            </p>
-            <p>
-                <button type="button" id="3_grade_7" class="btn btn-success btn-block grade3">极柱</button>
-            </p>
-            <p>
-                <button type="button" id="3_grade_8" class="btn btn-success btn-block grade3">触壁表面不平、氧化</button>
-            </p>
-        </div>
-        <div class="col-md-2 col-lg-2">
-            <p>
-                <button type="button" id="4_grade_1" class="btn btn-success btn-block grade4">装配不达标</button>
-            </p>
-            <p>
-                <button type="button" id="4_grade_2" class="btn btn-success btn-block grade4">零件本身性能不合格</button>
-            </p>
-            <p>
-                <button type="button" id="4_grade_3" class="btn btn-success btn-block grade4">零件表面尺寸不合格</button>
-            </p>
-        </div>
-        <div class="col-md-2 col-lg-2">
-            <p>
-                <button type="button" id="5_grade_1" class="btn btn-info btn-block grade5">箱体上位</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_2" class="btn btn-info btn-block grade5">清丝、铰孔</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_3" class="btn btn-info btn-block grade5">拐臂、分闸簧安装</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_4" class="btn btn-info btn-block grade5">极柱安装</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_5" class="btn btn-info btn-block grade5">机构、主轴部安装</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_6" class="btn btn-info btn-block grade5">机构与箱体连接</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_7" class="btn btn-info btn-block grade5"> 传动系统连接</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_8" class="btn btn-info btn-block grade5">二次布线</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_9" class="btn btn-info btn-block grade5">底盘车安装</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_10" class="btn btn-info btn-block grade5">触臂安装</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_11" class="btn btn-info btn-block grade5"> 封板围板安装</button>
-            </p>
-            <p>
-                <button type="button" id="5_grade_12" class="btn btn-info btn-block grade5">底盘车连锁安装</button>
-            </p>
-        </div>
+    <div class="col-md-1 col-lg-1 traceTitle">
+        <img src="/traceGuide/picture/rightArrow.svg" class="rightArrow"/>
     </div>
-    <div class="row">
-        <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
-            <h4><span class="label label-warning">说明：</span></h4>
-            <span class="guideDescription">针对发生的质量问题，用户可<span
-                    style="font-weight: 900;color: #a94442">通过点击各标签查看与之相关的对象</span>，利用该功能可以对问题发生的来源进行定性或定量的追溯定位，将问题定位至原材料采购、装配、售后等相关的环节。一方面能够帮助现场操作人员找到问题的根源，另一方面规范装配环节的关键步骤操作（能够定量的给出具体的数值范围），从而在测试环节之前进行严格把关，减少测试环节出现质量问题的概率，提高生产效率。
+    <div class="col-md-3 col-lg-3 traceTitle">
+        <div class="factorClassification">影响因素分类</div>
+    </div>
+    <div class="col-md-1 col-lg-1 traceTitle">
+        <img src="/traceGuide/picture/rightArrow.svg" class="rightArrow"/>
+    </div>
+    <div class="col-md-2 col-lg-2 traceTitle">
+        <div class="traceability">质量问题追溯</div>
+    </div>
+</div>
+<div class="row traceContent">
+    <div class="col-md-2 col-lg-2 col-md-offset-1 col-lg-offset-1">
+        <p>
+            <button type="button" id="1_grade_1" class="btn btn-primary btn-block grade1">磨合</button>
+        </p>
+        <p>
+            <button type="button" id="1_grade_2" class="btn btn-primary btn-block grade1">机械特性测试</button>
+        </p>
+        <p>
+            <button type="button" id="1_grade_3" class="btn btn-primary btn-block grade1">工频耐压回路电阻测试</button>
+        </p>
+    </div>
+    <div class="col-md-2 col-lg-2">
+        <p>
+            <button type="button" id="2_grade_1" class="btn btn-primary btn-block grade2">拒分</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_2" class="btn btn-primary btn-block grade2">拒和</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_3" class="btn btn-primary btn-block grade2">拒动</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_4" class="btn btn-primary btn-block grade2">开距</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_5" class="btn btn-primary btn-block grade2">超程</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_6" class="btn btn-primary btn-block grade2">同期性</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_7" class="btn btn-primary btn-block grade2">弹跳</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_8" class="btn btn-primary btn-block grade2">速度</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_9" class="btn btn-primary btn-block grade2">相间电压</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_10" class="btn btn-primary btn-block grade2">端口间电压</button>
+        </p>
+        <p>
+            <button type="button" id="2_grade_11" class="btn btn-primary btn-block grade2">击穿</button>
+        </p>
+    </div>
+    <div class="col-md-2 col-lg-2">
+        <p>
+            <button type="button" id="3_grade_1" class="btn btn-success btn-block grade3">油杯高度</button>
+        </p>
+        <p>
+            <button type="button" id="3_grade_2" class="btn btn-success btn-block grade3">二次配线</button>
+        </p>
+        <p>
+            <button type="button" id="3_grade_3" class="btn btn-success btn-block grade3">脱扣器</button>
+        </p>
+        <p>
+            <button type="button" id="3_grade_4" class="btn btn-success btn-block grade3">电磁铁</button>
+        </p>
+        <p>
+            <button type="button" id="3_grade_5" class="btn btn-success btn-block grade3">限位螺钉</button>
+        </p>
+        <p>
+            <button type="button" id="3_grade_6" class="btn btn-success btn-block grade3">极柱拉杆螺钉</button>
+        </p>
+        <p>
+            <button type="button" id="3_grade_7" class="btn btn-success btn-block grade3">极柱</button>
+        </p>
+        <p>
+            <button type="button" id="3_grade_8" class="btn btn-success btn-block grade3">触壁表面不平、氧化</button>
+        </p>
+    </div>
+    <div class="col-md-2 col-lg-2">
+        <p>
+            <button type="button" id="4_grade_1" class="btn btn-success btn-block grade4">装配不达标</button>
+        </p>
+        <p>
+            <button type="button" id="4_grade_2" class="btn btn-success btn-block grade4">零件本身性能不合格</button>
+        </p>
+        <p>
+            <button type="button" id="4_grade_3" class="btn btn-success btn-block grade4">零件表面尺寸不合格</button>
+        </p>
+    </div>
+    <div class="col-md-2 col-lg-2">
+        <p>
+            <button type="button" id="5_grade_1" class="btn btn-info btn-block grade5">箱体上位</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_2" class="btn btn-info btn-block grade5">清丝、铰孔</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_3" class="btn btn-info btn-block grade5">拐臂、分闸簧安装</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_4" class="btn btn-info btn-block grade5">极柱安装</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_5" class="btn btn-info btn-block grade5">机构、主轴部安装</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_6" class="btn btn-info btn-block grade5">机构与箱体连接</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_7" class="btn btn-info btn-block grade5"> 传动系统连接</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_8" class="btn btn-info btn-block grade5">二次布线</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_9" class="btn btn-info btn-block grade5">底盘车安装</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_10" class="btn btn-info btn-block grade5">触臂安装</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_11" class="btn btn-info btn-block grade5"> 封板围板安装</button>
+        </p>
+        <p>
+            <button type="button" id="5_grade_12" class="btn btn-info btn-block grade5">底盘车连锁安装</button>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 describeWord">
+        <h4><span class="label label-warning">说明：</span></h4>
+        <span class="guideDescription">针对发生的质量问题，用户可<span
+                style="font-weight: 900;color: #a94442">通过点击各标签查看与之相关的对象</span>，利用该功能可以对问题发生的来源进行定性或定量的追溯定位，将问题定位至原材料采购、装配、售后等相关的环节。一方面能够帮助现场操作人员找到问题的根源，另一方面规范装配环节的关键步骤操作（能够定量的给出具体的数值范围），从而在测试环节之前进行严格把关，减少测试环节出现质量问题的概率，提高生产效率。
                 领导层可通过本功能发现质量问题的薄弱环节，为工艺优化等决策提供参考。
             </span>
-        </div>
     </div>
 </div>
 <footer>

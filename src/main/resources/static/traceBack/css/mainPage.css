@@ -24,3 +24,7 @@
     width: 400px;
     margin-top: 160px;
 }
+
+.parameterContainer {
+    min-height: 925px;
+}

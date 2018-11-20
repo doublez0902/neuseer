@@ -21,3 +21,11 @@ th {
 .faultOverviewTitle {
     font-size: 16px;
 }
+
+.mechanicalFailure {
+    max-width: 80%;
+}
+
+.electricalFault {
+    max-width: 80%;
+}
