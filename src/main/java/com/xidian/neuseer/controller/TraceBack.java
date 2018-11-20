@@ -8,6 +8,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,6 +29,11 @@ public class TraceBack {
 
     @Resource
     DataService dataService;
+
+    @GetMapping("/")
+    public String users(Model model) {
+        return "home";
+    }
 
     @RequestMapping("/traceBack")
     public String traceBack() {
