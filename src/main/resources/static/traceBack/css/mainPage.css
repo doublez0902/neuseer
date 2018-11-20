@@ -7,3 +7,20 @@
     margin-top: 50px;
     overflow: auto;
 }
+
+.dataAnalysisBack {
+    width: 200px;
+}
+
+.analysisDescriptionHead {
+    margin-top: 180px;
+}
+
+.analysisDescription {
+    line-height: 30px;
+}
+
+.dataAnalysisBack {
+    width: 400px;
+    margin-top: 160px;
+}

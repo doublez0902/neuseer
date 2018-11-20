@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>分析结果</title>
+
+    <script src="/assert/js/echarts.common.min.js"></script>
+
+    <script src="/traceback/js/analysisResult.js"></script>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+        <h3>定性分析结果:</h3>
+        <br/>
+        <table class="table table-bordered table-hover table-striped">
+            <tr>
+                <th th:each="titleName : ${title}">
+                    <span th:text="${titleName}"></span>
+                </th>
+            </tr>
+            <tr th:each="lineData : ${tableData}">
+                <div th:each="dataValue : ${lineData.values()}">
+                    <td th:text="${dataValue}"></td>
+                </div>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+        <h4><span class="label label-warning">说明：</span></h4>
+        <span class="qualitativeDescription">以“{envir_temp=envir_temp1} => {fault_cause=SF6XieLou}”为例，可以看出当envir_temp（环境温度）在区间envir_temp1（[-11,6)）时，可以推导出发生SF6泄漏故障。
+            对于该条规则而言，表征导致SF6泄漏故障的因素可能是环境温度在[-11,6)内。与此类似，即可将所有与各种故障相关的影响因素全部挖掘出来。对于定性分析得到的结果我们优先选用支持度（Support），
+            置信度（Confidence）较大的规则，因为支持度与置信度越高表明该条规则对故障发生影响越大，而对于提升度（Lift）而言，提升度反映了关联规则中的A与B的相关性，提升度>1且越高表明正相关性越高，
+            提升度<1且越低表明负相关性越高，提升度=1表明没有相关性。</span>
+        <br/>
+        <h4><span class="label label-warning">区间对应表：</span></h4>
+        <table class="table">
+            <tr>
+                <th>属性区间</th>
+                <th>环境温度 EnvTemp</th>
+                <th>操动机构次数 MecNum</th>
+                <th>开断电流次数 OpenNum</th>
+                <th>运行时间 UseTime</th>
+            </tr>
+            <tr>
+                <td>区间1</td>
+                <td>envir_temp1: [-11，6]</td>
+                <td>open_num1: [10，167]</td>
+                <td>open_cur1: [0，18]</td>
+                <td>UseTime1: [1382，3403]</td>
+            </tr>
+            <tr>
+                <td>区间2</td>
+                <td>envir_temp2: (6，23]</td>
+                <td>open_num2: (167，324]</td>
+                <td>open_cur2: (18，36]</td>
+                <td>UseTime2: (3403，5424]</td>
+            </tr>
+            <tr>
+                <td>区间3</td>
+                <td>envir_temp3: (23，40]</td>
+                <td>open_num3: (324，483]</td>
+                <td>open_cur3: (36，55]</td>
+                <td>UseTime3: (5424，7445]</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br/>
+<div class="col-md-6 col-lg-6 col-md-offset-1 col-lg-offset-1">
+    <h3>分析结果可视化:</h3>
+    <br/>
+    <div id="resultView" style="width: 1000px;height:800px;"></div>
+</div>
+</body>
+<script th:inline="javascript">
+    var optionSelected = [[${option}]];
+    var optionView;
+    switch (optionSelected) {
+        case 'option_leak':
+            optionView = option_leak;
+            break;
+        case 'option_deterioration':
+            optionView = option_deterioration;
+            break;
+        case 'option_abnormal':
+            optionView = option_abnormal;
+            break;
+        case 'option_damage':
+            optionView = option_abnormal;
+    }
+    myChart.setOption(optionView);
+</script>
+</html>

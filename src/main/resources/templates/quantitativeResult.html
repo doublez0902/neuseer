@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>分析结果</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+        <h3>定量分析结果:</h3>
+        <br/>
+        <h4>Deviance Residuals:</h4>
+        <table class="table table-bordered">
+            <tr>
+                <th th:each="titleName : ${title}">
+                    <span th:text="${titleName}"></span>
+                </th>
+            </tr>
+            <tr th:each="lineData : ${tableData}">
+                <div th:each="dataValue : ${lineData.values()}">
+                    <td th:text="${dataValue}"></td>
+                </div>
+            </tr>
+        </table>
+        <br/>
+        <h4>Coefficients:</h4>
+        <table class="table table-bordered">
+            <tr>
+                <th th:each="anotherTitleName : ${anotherTitle}">
+                    <span th:text="${anotherTitleName}"></span>
+                </th>
+            </tr>
+            <tr th:each="anotherLineData : ${anotherData}">
+                <div th:each="anotherDataValue : ${anotherLineData.values()}">
+                    <td th:text="${anotherDataValue}"></td>
+                </div>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+        <h4><span class="label label-warning">说明：</span></h4>
+        <h5>Signif. codes: 0 ‘***’， 0.001 ‘**’， 0.01 ‘*’， 0.05 ‘.’， 0.1 ‘ ’</h5>
+        <span class="guideDescription">查询各“factor”的“Estimate”值,绝对值越大的“factor”对故障的影响越大。以“投运时间”属性因素为例，如果相比其它属性的系数，该属性系数明显较大，则表明导致“操作机构异常”主要危险因素是“投运时间”。可能原因是随着投运时间越来越长，由于机械老化等原因，使得机械发生故障的可能性越来越大。
+                我们将定性分析与定量分析结合便可得到对于该故障发生的关键影响因素，与此类似，即可将所有与各种故障相关的影响因素全部挖掘出来。
+            </span>
+    </div>
+</div>
+</body>
+</html>

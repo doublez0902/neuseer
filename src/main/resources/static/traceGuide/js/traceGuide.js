@@ -5,7 +5,13 @@ function clearMark(clickId) {
         for (j = 1; j <= gradeLength; j++) {
             if ($("#" + i + "_grade_" + j).hasClass("btn-danger")) {
                 $("#" + i + "_grade_" + j).removeClass("btn-danger");
-                $("#" + i + "_grade_" + j).addClass("btn-warning");
+                if (i <= 2) {
+                    $("#" + i + "_grade_" + j).addClass("btn-primary");
+                } else if (i <= 4) {
+                    $("#" + i + "_grade_" + j).addClass("btn-success");
+                } else {
+                    $("#" + i + "_grade_" + j).addClass("btn-info");
+                }
             }
         }
     }
@@ -33,9 +39,16 @@ function getGradeLength(grade) {
     return j;
 }
 
-function setMark(obj) {
-    obj.removeClass(".btn-warning");
-    obj.addClass("btn-danger");
+function setMark(clickId) {
+    var idGrade = parseInt(clickId.charAt(0));
+    if (idGrade <= 2) {
+        $("#" + clickId).removeClass(".btn-primary");
+    } else if (idGrade <= 4) {
+        $("#" + clickId).removeClass(".btn-success");
+    } else {
+        $("#" + clickId).removeClass(".btn-info");
+    }
+    $("#" + clickId).addClass("btn-danger");
 }
 
 // 第一列
@@ -43,188 +56,177 @@ $("#1_grade_1").click(function (e) {
     // 使用e.target获取对象，不要使用this
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#2_grade_1"));
-    setMark($("#2_grade_2"));
-    setMark($("#2_grade_3"));
+    setMark(clickId);
+    setMark("2_grade_1");
+    setMark("2_grade_2");
+    setMark("2_grade_3");
 })
 
 $("#1_grade_2").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#2_grade_4"));
-    setMark($("#2_grade_5"));
-    setMark($("#2_grade_6"));
-    setMark($("#2_grade_7"));
-    setMark($("#2_grade_8"));
+    setMark(clickId);
+    setMark("2_grade_4");
+    setMark("2_grade_5");
+    setMark("2_grade_6");
+    setMark("2_grade_7");
+    setMark("2_grade_8");
 })
 $("#1_grade_3").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#2_grade_9"));
-    setMark($("#2_grade_10"));
-    setMark($("#2_grade_11"));
+    setMark(clickId);
+    setMark("2_grade_9");
+    setMark("2_grade_10");
+    setMark("2_grade_11");
 })
+//第二列
 $("#2_grade_1").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_1"));
+    setMark(clickId);
+    setMark("3_grade_1");
 })
-//第二列
 $("#2_grade_2").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_2"));
+    setMark(clickId);
+    setMark("3_grade_2");
 })
 $("#2_grade_3").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_3"));
-    setMark($("#3_grade_4"));
+    setMark(clickId);
+    setMark("3_grade_3");
+    setMark("3_grade_4");
 })
 $("#2_grade_4").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_5"));
+    setMark(clickId);
+    setMark("3_grade_5");
 })
 $("#2_grade_5").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_5"));
-    setMark($("#3_grade_6"));
+    setMark(clickId);
+    setMark("3_grade_5");
+    setMark("3_grade_6");
 })
 $("#2_grade_6").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_6"));
+    setMark(clickId);
+    setMark("3_grade_6");
 })
 $("#2_grade_7").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_6"));
+    setMark(clickId);
+    setMark("3_grade_6");
 })
 $("#2_grade_8").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_3"));
-    setMark($("#3_grade_4"));
+    setMark(clickId);
+    setMark("3_grade_3");
+    setMark("3_grade_4");
 })
 $("#2_grade_9").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_7"));
+    setMark(clickId);
+    setMark("3_grade_7");
 })
 $("#2_grade_10").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_7"));
+    setMark(clickId);
+    setMark("3_grade_7");
 })
 $("#2_grade_11").click(function (e) {
     var clickId = $(e.target).attr("id");
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#3_grade_8"));
+    setMark(clickId);
+    setMark("3_grade_8");
 })
 // 第三列
 $("#3_grade_1").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#4_grade_1"));
+    setMark(clickId);
+    setMark("4_grade_1");
 })
 $("#3_grade_2").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#4_grade_1"));
+    setMark(clickId);
+    setMark("4_grade_1");
 })
 $("#3_grade_3").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#4_grade_1"));
+    setMark(clickId);
+    setMark("4_grade_1");
 })
 $("#3_grade_4").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#4_grade_1"));
+    setMark(clickId);
+    setMark("4_grade_1");
 })
 $("#3_grade_5").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#4_grade_1"));
+    setMark(clickId);
+    setMark("4_grade_1");
 })
 $("#3_grade_6").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#4_grade_1"));
+    setMark(clickId);
+    setMark("4_grade_1");
 })
 $("#3_grade_7").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#4_grade_2"));
+    setMark(clickId);
+    setMark("4_grade_2");
 })
 $("#3_grade_8").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#4_grade_3"));
+    setMark(clickId);
+    setMark("4_grade_3");
 })
 // 第四列
 $("#4_grade_1").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#5_grade_1"));
-    setMark($("#5_grade_2"));
-    setMark($("#5_grade_3"));
-    setMark($("#5_grade_4"));
-    setMark($("#5_grade_5"));
-    setMark($("#5_grade_6"));
-    setMark($("#5_grade_7"));
-    setMark($("#5_grade_8"));
-    setMark($("#5_grade_9"));
-    setMark($("#5_grade_10"));
-    setMark($("#5_grade_11"));
-    setMark($("#5_grade_12"));
+    setMark(clickId);
+    setMark("5_grade_1");
+    setMark("5_grade_2");
+    setMark("5_grade_3");
+    setMark("5_grade_4");
+    setMark("5_grade_5");
+    setMark("5_grade_6");
+    setMark("5_grade_7");
+    setMark("5_grade_8");
+    setMark("5_grade_9");
+    setMark("5_grade_10");
+    setMark("5_grade_11");
+    setMark("5_grade_12");
 })
 
 $("#4_grade_2").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#5_grade_4"));
+    setMark(clickId);
+    setMark("5_grade_4");
 })
 $("#4_grade_3").click(function (e) {
     var clickId = $(e.target).attr("id");
-    console.log(clickId);
     clearMark(clickId);
-    setMark($(e.target));
-    setMark($("#5_grade_4"));
+    setMark(clickId);
+    setMark("5_grade_4");
 })

@@ -1,7 +1,7 @@
 header .row {
     padding-left: -15px;
     padding-right: -15px;
-    background: linear-gradient(#0048DA, #0063FF);
+    background: #2D3E50;
     height: 52px;
 }
 
@@ -32,7 +32,7 @@ a, a:hover {
 }
 
 footer .row {
-    background-color: #373D41;
+    background-color: #2D3E50;
     height: 30px;
 }
 
