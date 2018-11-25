@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:mysql://120.24.157.214:3306/neuseer
     username: root
-    password: 123456
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
   mybatis:
     type-aliases-package: com.xidian.neuseer.domain
