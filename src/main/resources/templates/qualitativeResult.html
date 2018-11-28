@@ -74,21 +74,59 @@
 </div>
 </body>
 <script th:inline="javascript">
-    var optionSelected = [[${option}]];
-    var optionView;
-    switch (optionSelected) {
-        case 'option_leak':
-            optionView = option_leak;
-            break;
-        case 'option_deterioration':
-            optionView = option_deterioration;
-            break;
-        case 'option_abnormal':
-            optionView = option_abnormal;
-            break;
-        case 'option_damage':
-            optionView = option_abnormal;
-    }
-    myChart.setOption(optionView);
+    var myChart = echarts.init(document.getElementById('resultView'));
+    var supportResult = [[${supportList}]];
+    var confidenceResult = [[${confidenceList}]];
+    // console.log(supportResult);
+    // console.log(confidenceResult);
+    option = {
+        title: {
+            text: '定性分析结果视图',
+            subtext: '上：support    下：confidence',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            x: 'center',
+            y: 'bottom',
+            data: []
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                magicType: {
+                    show: true,
+                    type: ['pie', 'funnel']
+                },
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        calculable: true,
+        series: [
+            {
+                name: 'support',
+                type: 'pie',
+                radius: [20, 110],
+                center: ['50%', '32%'],
+                roseType: 'radius',
+                data: supportResult,
+            },
+            {
+                name: 'confidence',
+                type: 'pie',
+                radius: [30, 110],
+                center: ['50%', '78%'],
+                roseType: 'radius',
+                data: confidenceResult
+            }
+        ]
+    };
+    myChart.setOption(option);
 </script>
 </html>

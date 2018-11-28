@@ -209,6 +209,24 @@ public class TraceBack {
         }
         modelAndView.addObject("title", title);
 
+
+        List<Map<String, String>> supportList = new ArrayList<>();
+        List<Map<String, String>> confidenceList = new ArrayList<>();
+        for (HashMap<String, String> lineData : tableData) {
+            Map<String, String> supportMap = new HashMap<>();
+            Map<String, String> confidenceMap = new HashMap<>();
+
+            supportMap.put("value", lineData.get("support"));
+            supportMap.put("name", lineData.get("rules"));
+            confidenceMap.put("value", lineData.get("confidence"));
+            confidenceMap.put("name", lineData.get("rules"));
+
+            supportList.add(supportMap);
+            confidenceList.add(confidenceMap);
+        }
+        modelAndView.addObject("supportList", supportList);
+        modelAndView.addObject("confidenceList", confidenceList);
+
         if (analysisType.equals("quantitative")) {
             List<LinkedHashMap<String, String>> anotherData = dataService.getTableData(failureType + "anotherValue");
             modelAndView.addObject("anotherData", anotherData);
@@ -219,8 +237,6 @@ public class TraceBack {
             }
             modelAndView.addObject("anotherTitle", anotherTitle);
         }
-
-        modelAndView.addObject("option", "option_" + failureType);
 
         return modelAndView;
     }
